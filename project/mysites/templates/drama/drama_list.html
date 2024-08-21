@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBS 드라마 목록</title>
+    <style>
+        .drama {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .drama img {
+            width: 150px;
+            height: 100px;
+            margin-right: 20px;
+        }
+        .drama h2 {
+            margin: 0;
+        }
+        .drama p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>SBS 드라마 목록</h1>
+    <div class="drama-list">
+        {% for drama in dramas %}
+        <div class="drama">
+            <img src="{{ drama.thumbnail }}" alt="{{ drama.title }}">
+            <div>
+                <h2><a href="{{ drama.link }}">{{ drama.title }}</a></h2>
+                <p>{{ drama.description }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
